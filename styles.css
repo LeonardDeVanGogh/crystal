@@ -1,0 +1,140 @@
+/*
+ * Feuille de styles pour la maquette « Les Boules de Crystal ».  
+ * Les couleurs principales sont définies via des variables CSS afin de
+ * faciliter l’ajustement. La mise en page est réalisée avec flexbox
+ * pour permettre une adaptation responsive simple.
+ */
+
+:root {
+  --color-dark: #0a1e4a;   /* bleu profond pour les sections sombres */
+  --color-light: #f8f5f2;  /* ivoire pour les sections claires */
+  --color-accent: #7f5af0; /* violet/mauve pour les éléments interactifs */
+  --color-accent-hover: #6843ce; /* nuance plus foncée au survol */
+  --max-width: 1200px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--color-dark);
+  background-color: var(--color-light);
+}
+
+/* Section bannière avec une image cosmique en arrière‑plan */
+.hero-banner {
+  height: 60vh;
+  min-height: 400px;
+  background-image: url('images/cosmic_banner.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Section accroche sur fond clair */
+.accroche {
+  background-color: var(--color-light);
+  color: var(--color-dark);
+  text-align: center;
+  padding: 4rem 1.5rem;
+}
+.accroche-content {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+.accroche h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+.accroche p {
+  font-size: 1.125rem;
+  margin: 0;
+}
+
+/* Section storytelling sur fond sombre */
+.story {
+  background-color: var(--color-dark);
+  color: var(--color-light);
+  padding: 5rem 1.5rem;
+}
+.story-content {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  align-items: center;
+}
+.story-image {
+  flex: 1 1 45%;
+  display: flex;
+  justify-content: center;
+}
+.story-image img {
+  width: 75%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+.story-text {
+  flex: 1 1 45%;
+}
+.story-text h2 {
+  font-size: 2rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+.story-text p {
+  font-size: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+/* Section appel à l’action */
+.cta {
+  background-color: var(--color-dark);
+  color: var(--color-light);
+  text-align: center;
+  padding: 4rem 1.5rem;
+}
+.cta h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+.cta p {
+  font-size: 1.125rem;
+  margin-bottom: 1.5rem;
+}
+.button {
+  display: inline-block;
+  padding: 0.75rem 2rem;
+  background-color: var(--color-accent);
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 9999px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+.button:hover {
+  background-color: var(--color-accent-hover);
+}
+
+/* Responsive adaptations */
+@media (max-width: 768px) {
+  .hero-banner {
+    height: 40vh;
+  }
+  .story-content {
+    flex-direction: column;
+  }
+  .story-image,
+  .story-text {
+    flex: 1 1 100%;
+  }
+  .story-image {
+    margin-bottom: 2rem;
+  }
+}
